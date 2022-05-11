@@ -10,15 +10,28 @@ function App() {
   const [account, setAccount] = useState(undefined);
   const [adderContract, setAdderContract] = useState(undefined);
 
+  useEffect(() => {
+    loadWeb3();
+    loadBlockchainData();
+  }, [account]);
+
   const loadBlockchainData = async () => {
     if (provider) {
       const { chainId } = await provider.getNetwork();
+      console.log(chainId);
+      if (!Adder.networks[chainId]) {
+        window.alert("Please switch to truffle chain");
+        return;
+      }
       const _adderContract = new ethers.Contract(
         Adder.networks[chainId].address,
         Adder.abi,
         provider
       );
+      console.log(_adderContract);
       setAdderContract(_adderContract);
+      const price = await _adderContract.price();
+      console.log("price: ", price.toString());
     }
   };
 

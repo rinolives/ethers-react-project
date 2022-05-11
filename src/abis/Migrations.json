@@ -12,7 +12,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -25,7 +26,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -669,7 +671,7 @@
   "sourceMap": "66:352:1:-:0;;;90:33;;;-1:-1:-1;;;;;;90:33:1;113:10;90:33;;;66:352;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "66:352:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:36;;;;;;;;;160:25:2;;;148:2;133:18;127:36:1;;;;;;;;90:33;;;;;-1:-1:-1;;;;;90:33:1;;;;;;-1:-1:-1;;;;;360:32:2;;;342:51;;330:2;315:18;90:33:1;196:203:2;313:103:1;;;;;;:::i;:::-;;:::i;:::-;;;225:5;;-1:-1:-1;;;;;225:5:1;211:10;:19;196:101;;;;-1:-1:-1;;;196:101:1;;791:2:2;196:101:1;;;773:21:2;830:2;810:18;;;803:30;869:34;849:18;;;842:62;-1:-1:-1;;;920:18:2;;;913:49;979:19;;196:101:1;;;;;;;;375:24:::1;:36:::0;313:103::o;404:180:2:-;463:6;516:2;504:9;495:7;491:23;487:32;484:52;;;532:1;529;522:12;484:52;-1:-1:-1;555:23:2;;404:180;-1:-1:-1;404:180:2:o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract Migrations {\n  address public owner = msg.sender;\n  uint public last_completed_migration;\n\n  modifier restricted() {\n    require(\n      msg.sender == owner,\n      \"This function is restricted to the contract's owner\"\n    );\n    _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}\n",
-  "sourcePath": "/Users/robertrinearson/Documents/blockchain/lfg/employee-test/ethers-react-project/src/contracts/Migrations.sol",
+  "sourcePath": "/Users/robertrinearson/Documents/blockchain/lfg/employee-test/test/ethers-react-project/src/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1468,9 +1470,23 @@
     "name": "solc",
     "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "1337": {
+      "events": {},
+      "links": {},
+      "address": "0x9d2e926A18d385805801455dF3ED8dC59B64C720",
+      "transactionHash": "0xbb36cb6a59a6aa9c33b4f7205269d6ab4c044fcce2bf79a2ea986e9f49b67c0c"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x5d17712F7D1e4F54874B3a5979F9c97E2ab0eaea",
+      "transactionHash": "0x4045d4e5ef0adc61f3006d4dd9387cdb4c1c15dc1e4b7d716debe898c7412ba1"
+    }
+  },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-04-19T23:59:30.336Z",
+  "updatedAt": "2022-05-11T15:34:50.693Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
